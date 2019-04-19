@@ -24,7 +24,7 @@ def main():
         print('----- Start training -----')
         for iteration in range(args.iteration_num):
             model.training_run(sess, iteration)
-            if (iteration + 1) % 5 == 0:
+            if (iteration + 1) % 50 == 0:
                 model.evaluate_run(sess)
 
 
