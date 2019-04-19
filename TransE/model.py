@@ -13,17 +13,10 @@ class TransE:
         self.learning_rate = learning_rate
         self.embedding_dim = embedding_dim
 
-        # self.loss = None
-        # self.train_op = None
         self.margin = tf.placeholder(tf.float32, shape=[None])
         self.pos_triple = tf.placeholder(tf.int32, shape=[None, 3])
         self.neg_triple = tf.placeholder(tf.int32, shape=[None, 3])
         self.global_step = tf.Variable(0, trainable=False, name='global_step')
-
-        # self.entity_embedding = []
-        # self.relation_embedding = []
-        # self.h_sort_id = []
-        # self.t_sort_id = []
 
         self.training_graph()
         self.eval_triple = tf.placeholder(tf.int32, shape=[3])
